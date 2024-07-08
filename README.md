@@ -15,8 +15,8 @@
 ## Target Table
 ![image](https://github.com/ravichinni/excel-script-project-status-summary/assets/10705784/c64a484c-ae4c-40f4-9cb7-1b339e3bbfb9)
 
-##Sample file
-See the sample file 
+## Sample file
+See the sample file https://github.com/ravichinni/excel-script-project-status-summary/blob/main/Project%20Status%20Tracker.xlsx
 
 # Solution - Used GPT-4o to generate the code
 **These are the prompts**
