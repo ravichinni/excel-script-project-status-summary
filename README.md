@@ -9,8 +9,17 @@
 - Completion Score % is (19*100)/24
 - Completion Score is monitored weekly
 - Need a script to compute the Completion score.
+## Source Table
+![image](https://github.com/ravichinni/excel-script-project-status-summary/assets/10705784/645006a1-c73c-48d9-9197-77c018efc1c1)
 
-# Generative AI Prompts
+## Target Table
+![image](https://github.com/ravichinni/excel-script-project-status-summary/assets/10705784/c64a484c-ae4c-40f4-9cb7-1b339e3bbfb9)
+
+##Sample file
+See the sample file 
+
+# Solution - Used GPT-4o to generate the code
+**These are the prompts**
 - Prompt #1: You are a Expert Developer on Office Scripts particular on Excel Script
 - Prompt #2:
 Below are the requirements for the script.
@@ -20,19 +29,19 @@ Below are the requirements for the script.
 4. Add a row for each PM in the Table11 if it doesn't exist already.
 5. Add a column to the table with column name as Current Date in the format "DDMMMYY". Example: 08JUL24. The column should be added if it isn't present already.
 6 The row value for the column should contain a Project Score. Project Score is defined as the count of the projects the PM has.
--Prompt #3: Got a compilation error "See line 30, column 9: Office Scripts cannot infer the data type of this variable. Please declare a type for the variable."
--Prompt #4: Another error "[30, 41] Property 'getColumnCount' does not exist on type 'Table'."
--Prompt #5: Next error "[52, 31] Property 'getRangeBetweenHeaderAndLastRow' does not exist on type 'Table'. Did you mean 'getRangeBetweenHeaderAndTotal'?"
--Prompt #6: next error "[47, 29] Type 'IterableIterator<[string, number]>' is not an array type or a string type. Use compiler option '--downlevelIteration' to allow iterating of iterators."
--Prompt #7: Please add debug statements to the code at appropriate locations
--Prompt #8: Now lets change the logic to calculate the Project Score. Each of the Project Statuses carry a weight as stated below.
+- Prompt #3: Got a compilation error "See line 30, column 9: Office Scripts cannot infer the data type of this variable. Please declare a type for the variable."
+- Prompt #4: Another error "[30, 41] Property 'getColumnCount' does not exist on type 'Table'."
+- Prompt #5: Next error "[52, 31] Property 'getRangeBetweenHeaderAndLastRow' does not exist on type 'Table'. Did you mean 'getRangeBetweenHeaderAndTotal'?"
+- Prompt #6: next error "[47, 29] Type 'IterableIterator<[string, number]>' is not an array type or a string type. Use compiler option '--downlevelIteration' to allow iterating of iterators."
+- Prompt #7: Please add debug statements to the code at appropriate locations
+- Prompt #8: Now lets change the logic to calculate the Project Score. Each of the Project Statuses carry a weight as stated below.
 Complete is 4
 UAT is 3
 Development, In Progress is 2
 Rest all statuses is 1
 NotApplicable is 0
 For each PM multiply the weight by the number of projects with corresponding status and sum it up.
--Prompt #9: Also add a column called "Target Score". For each PM, this is total number of projects multiplied by the weight for Complete status.
+- Prompt #9: Also add a column called "Target Score". For each PM, this is total number of projects multiplied by the weight for Complete status.
 This needs to be re-calculated every time the program runs.
--Prompt #10: Also add a column with the name format "Score%-DDMMMYY". This is similar to "Score-DDMMMYY", but just expressed as a percentage of "Target Score"
+- Prompt #10: Also add a column with the name format "Score%-DDMMMYY". This is similar to "Score-DDMMMYY", but just expressed as a percentage of "Target Score"
 
